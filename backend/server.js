@@ -8,6 +8,7 @@
 //Se hará uso del framework express. La version se indica en el archivo package.json
 const cors = require ('cors');
 const authRoutes = require ('./auth/auth.routes');
+const trRoutes  = require ('./tr/tr.routes');
 const express = require("express");
 const properties = require('./config/properties');
 const DB= require('./config/db');
@@ -23,8 +24,8 @@ app.use(cors());
 app.use(bodyParserURLEnconded);
 app.use('api',router);
 authRoutes(router);
+trRoutes(router);
 router.get('/',(req,res)=>{
-res.send('Hola desde home');
 });
 app.use(router);
 app.listen(3000, () => console.log(`server running on port ${properties.PORT}`));

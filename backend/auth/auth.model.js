@@ -26,10 +26,11 @@ const userSchema = new Schema({
       required: true,
       trim: true
     },
+
   },
+
   {
     timestamps: true,
   }
 );
-
 module.exports = userSchema;

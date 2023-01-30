@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const trSchema = require('./tr.model');
+const trSchema = require('../tr.models/tr.model');
 trSchema.statics = {
     create: function (data,cb){
         const card = new this(data);
@@ -9,3 +9,5 @@ trSchema.statics = {
 const trModel = mongoose.model('Cards',trSchema);
 
 module.exports =trModel;
+
+
